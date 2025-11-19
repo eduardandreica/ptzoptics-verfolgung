@@ -152,25 +152,25 @@ class CameraTracker:
         
         # Diagonal movements
         if target_x < left_line and target_y < top_line:
-            new_state = "rechtsunten"  # Original func name
+            new_state = "linksoben"  # Original func name
         elif target_x > right_line and target_y < top_line:
-            new_state = "linksunten"
-        elif target_x < left_line and target_y > bottom_line:
             new_state = "rechtsoben"
+        elif target_x < left_line and target_y > bottom_line:
+            new_state = "linksunten"
         elif target_x > right_line and target_y > bottom_line:
-            new_state = "linksoben"
+            new_state = "rechtsunten"
             
         # Vertical movements
         elif target_y < top_line and left_line < target_x < right_line:
-            new_state = "unten"
-        elif target_y > bottom_line and left_line < target_x < right_line:
             new_state = "oben"
+        elif target_y > bottom_line and left_line < target_x < right_line:
+            new_state = "unten"
             
         # Horizontal movements
         elif target_x < left_line and top_line < target_y < bottom_line:
-            new_state = "rechts"
-        elif target_x > right_line and top_line < target_y < bottom_line:
             new_state = "links"
+        elif target_x > right_line and top_line < target_y < bottom_line:
+            new_state = "rechts"
         
         # Stop (target is inside the box)
         else:
